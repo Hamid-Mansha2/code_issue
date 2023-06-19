@@ -38,7 +38,7 @@ before_script:
 
 script:
   - "./tests/ci/helper_scripts/script_cypress.sh"
-  - "task lint:backend:ci -- $(git diff --name-only --diff-filter=ACMR $TRAVIS_COMMIT_RANGE | sed 's| |\\ |g' | grep '\.py$' | grep -v 'production_secrets.py')"
+  - "task lint:backend:ci"
 
 before_cache:
   - rm -f $HOME/.cache/pip/log/debug.log
